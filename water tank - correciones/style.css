@@ -1,3 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  background: #0080ff;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header{
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+img{
+  width: 85px;
+  height: 90px;
+}
 h1{
   text-align: center;
   padding: 10px;
@@ -13,7 +47,7 @@ h2{
     position: relative;
     width: 500px;
     height: 500px;
-    margin: 0 auto;
+    margin-top: 90px;
     background-color: black;
     overflow: hidden;
     border-bottom: 40px solid black ;
@@ -37,7 +71,7 @@ h2{
     width: 80%;
     height: 0%;
     background-color: grey;
-    transition: height 0.5s;
+    transition: height 4s;
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;
   }
@@ -76,11 +110,133 @@ h2{
     color: black;
   }
   
-  body{
-   background-repeat: no-repeat;
-	 background-position-x: center;
-	 background-size: auto;
+  :root {
+    --main-gradient: linear-gradient(0deg, #fc2, #dfc);
   }
+  
+  .water-tap {
+    position: relative;
+    margin-left:-16px ;
+  }
+  
+  .water-tap .tap-body {
+    position: relative;
+    width: 250px;
+    height: 50px;
+    border-radius: 10%;
+    background: var(--main-gradient);
+    filter: url("#filter");
+  }
+  
+  .water-tap .tap-body:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 110px;
+    top: 50%;
+    left: -20px;
+    background: var(--main-gradient);
+    transform: translate(0, -50%);
+  }
+  
+  .water-tap .tap-body .tap-body-center {
+    position: absolute;
+    width: 150px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--main-gradient);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .water-tap .tap-body .tap-body-right {
+    position: absolute;
+    width: 40px;
+    height: 100px;
+    border-radius: 0 15px 0 0;
+    background: var(--main-gradient);
+    top: 0;
+    right: -25px;
+  }
+  
+  .water-tap .tap-body .tap-top {
+    position: absolute;
+    top: -100px;
+    width: 30px;
+    height: 80px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #dfc;
+  }
+  
+  .water-tap .tap-body .tap-controler {
+    cursor: -webkit-grab;
+    cursor: grab;
+    position: absolute;
+    top: -110px;
+    width: 120px;
+    height: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: var(--main-gradient);
+    transition: all 0.1s ease;
+  }
+  
+  .drop {
+    position: absolute;
+    bottom: -50px;
+    right: -20px;
+    width: 30px;
+    height: 40px;
+    border-radius: 100% 100% 80% 80%;
+    background: radial-gradient(#dfc, rgb(35, 35, 216));
+    z-index: -1;
+  }
+  
+  .opened {
+    -webkit-animation: open 0.2s ease forwards;
+            animation: open 0.2s ease forwards;
+  }
+  
+  .dropping {
+    -webkit-animation: dropping 1s ease 1s forwards;
+            animation: dropping 1s ease 1s forwards;
+  }
+  
+  @-webkit-keyframes open {
+    100% {
+      transform: translate(-50%, 0) rotateY(45deg);
+    }
+  }
+  
+  @keyframes open {
+    100% {
+      transform: translate(-50%, 0) rotateY(45deg);
+    }
+  }
+  @-webkit-keyframes dropping {
+    100% {
+      bottom: -800px;
+      heigh: 35px;
+    }
+  }
+  @keyframes dropping {
+    100% {
+      bottom: -800px;
+      heigh: 35px;
+    }
+  }
+  @media (max-width: 800px) {
+    .water-tap {
+      transform: scale(0.8, 0.8);
+    }
+  }
+
+.container{
+  padding: 10%;
+  margin: 10px;
+}
 
 
 
