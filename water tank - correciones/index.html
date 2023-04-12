@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanque de Agua</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="estilo.css">
   </head>
   <body>
-    <header>
+    <header> <!-- Inicio del encabezado --> 
         <img src="./assets/descarga (8)-PhotoRoom.png " alt="" srcset="">
         <h2 >Jesus Toussaint, Jose Vargas, Silvia Mendez</h2>
     </header>
     <div class="container">
-      <svg width="0" height="0">
+      <svg width="0" height="0"> <!-- Aqui se dibuja la llave --> 
         <defs>
           <filter id="filter">
             <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blured"></feGaussianBlur>
@@ -23,24 +22,26 @@
           </filter>
         </defs>
       </svg>
-        <div class="water-tap">
+        <div class="water-tap"> <!-- Boton de la llave --> 
           <div class="tap-body">
             <div class="tap-body-center"></div>
             <div class="tap-body-right"></div>
             <div class="tap-top"></div>
             <div class="tap-controler"></div>
-            <div class="drop"></div>
+            <div class="drop"></div> <!-- Gota --> 
           </div>
-          <div class="tank">
-            <div class="water-level" id="water-level"></div>
+          <div class="tank"> <!-- Inicio del tanque --> 
+            <div class="water-level" id="water-level"></div> <!-- Nivel del agua --> 
             <div class="tank-body"></div>
           </div>
           <div class="button-container">
-            <button class="add-button" onclick="addWater()">Quitar Agua</button>
+            <button class="add-button" onclick="addWater()">Quitar Agua</button> <!-- Boton que activa la funcion de quitar el agua --> 
           </div>
         </div>
     </div>    
     <script src="main.js"></script>
+
+    <!-- En si el programa funciona añadiendo o quitandole pixels de los divs para que suba el agua --> 
 
   </body>
 </html>
